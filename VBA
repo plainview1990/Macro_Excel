@@ -1,0 +1,51 @@
+Sub autofit() '#robot1
+
+ActiveSheet.Cells.EntireColumn.autofit
+
+End Sub
+
+Sub sheet_protect() '#robot2
+
+ActiveSheet.Protect Password:="1234"
+
+End Sub
+
+Sub sheet_unprotect() '#robot3
+
+ActiveSheet.Unprotect Password:="1234"
+
+End Sub
+
+Sub sheet_unhide() '#robot4
+
+For Each sh In Worksheets
+
+sh.Visible = True
+
+Next sh
+
+End Sub
+
+Sub prefix() '#robot5
+
+Dim c As Range
+
+For Each c In Selection
+
+c.Value = "ID-" & c.Value
+
+Next c
+
+End Sub
+
+Sub date_format() '#robot6
+
+Dim c As Range
+
+For Each c In Selection
+
+c.NumberFormat = "dd/mmmm/yyyy"
+
+Next c
+
+End Sub
